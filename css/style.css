@@ -1,0 +1,292 @@
+/* ? ------------------------------------------------------- Variables & Reset
+*/
+:root {
+  --primary-color: #6c5ce7;
+  --primary-hover: #5649c0;
+  --secondary-color: #a29bfe;
+  --bg-color: #f0f2f5; /* لون خلفية مثل فيسبوك/لينكد إن */
+  --card-bg: #ffffff;
+  --text-main: #2d3436;
+  --text-secondary: #636e72;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --radius-lg: 16px;
+  --radius-md: 12px;
+}
+
+body {
+  font-family: "Cairo", sans-serif !important; /* استخدام الخط الجديد */
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* إلغاء الكلاس القديم واستبداله بتنسيق حديث */
+.local-bg-purple-g {
+  background: var(--bg-color); /* إزالة التدرج اللوني القديم */
+}
+.local-bg-n {
+  background: none;
+}
+
+/* ? ------------------------------------------------------- Navbar
+*/
+.navbar {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 12px 0;
+}
+
+.navbar-brand {
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--primary-color) !important;
+  letter-spacing: -0.5px;
+}
+
+.nav-link {
+  font-weight: 600;
+  color: var(--text-secondary) !important;
+  transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-color) !important;
+}
+
+/* صورة المستخدم في الهيدر */
+.userImg-header {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border: 2px solid var(--secondary-color) !important;
+  padding: 2px;
+  transition: transform 0.2s;
+}
+.userImg-header:hover {
+  transform: scale(1.05);
+}
+
+.username-header {
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 10px;
+}
+
+/* ? ------------------------------------------------------- Cards & Posts
+*/
+.card {
+  background: var(--card-bg);
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  background: white;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.card img.w-100 {
+  /* صور البوستات */
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.post-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 5px;
+}
+
+.post-para {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.time-ago {
+  font-size: 0.8rem;
+  color: #b2bec3;
+  margin-top: 2px;
+}
+
+/* ? ------------------------------------------------------- Floating Button (Add Post)
+*/
+.button-addPost {
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  border-radius: 50%;
+  border: none;
+  display: flex; /* لضمان توسط العلامة */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(108, 92, 231, 0.4);
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: transform 0.3s;
+  z-index: 1000;
+}
+
+.button-addPost:hover {
+  transform: scale(1.1) rotate(90deg);
+}
+
+/* ? ------------------------------------------------------- Comments & Details
+*/
+.post-owner {
+  background: transparent;
+  font-weight: 800;
+  color: var(--primary-color);
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.comments {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: var(--radius-md);
+  margin-top: 15px;
+}
+
+.comment {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+  border-left: 3px solid var(--primary-color);
+}
+
+.input-group-text {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+/* ? ------------------------------------------------------- Profile Page
+*/
+.profile-content {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 0;
+}
+
+.profile-header {
+  background: linear-gradient(to right, #dfe6e9, #ffffff);
+  padding: 40px 20px;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.profile-header .col-one img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: var(--shadow-md);
+}
+
+.profile-header .col-two span {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-main);
+  display: block;
+}
+
+.profile-header .col-three span {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--primary-color);
+}
+
+.profile-header .col-three {
+  text-align: center;
+  background: white;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.profile-body-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 30px 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--bg-color);
+}
+
+/* ? ------------------------------------------------------- Modals & Alerts
+*/
+.modal-content {
+  border-radius: var(--radius-lg);
+  border: none;
+  box-shadow: var(--shadow-md);
+}
+
+.modal-header {
+  border-bottom: 1px solid #eee;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  padding: 8px 20px;
+  border-radius: 8px;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.form-control {
+  border-radius: 8px;
+  background-color: #fcfcfc;
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+  border-color: var(--primary-color);
+}
+
+/* ? ------------------------------------------------------- Loader
+*/
+.loader-div {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+}
+.lds-roller div:after {
+  background: var(--primary-color); /* جعل اللودر بلون الموقع */
+}
